@@ -4,8 +4,11 @@
 *.safetensors
 
 __pycache__/
+_in/
+_out/
 output/
 checkpoints/
+models/
 train/
 configs/
 
@@ -17,6 +20,7 @@ configs/
 *.log
 *.ckpt
 *.json
+*.tar
 
 *.csv
 *.txt

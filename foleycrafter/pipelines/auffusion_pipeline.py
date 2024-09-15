@@ -400,7 +400,7 @@ class Generator(torch.nn.Module):
         with torch.no_grad():
             wavs = self(mels).squeeze(1)
 
-        wavs = (wavs.cpu().numpy() * MAX_WAV_VALUE).astype("int16")
+        # wavs = (wavs.cpu().numpy() * MAX_WAV_VALUE).astype("int16")
 
         if lengths is not None:
             wavs = wavs[:, :lengths]

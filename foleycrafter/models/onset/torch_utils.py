@@ -15,8 +15,8 @@ def load_model(cp_path, net, device=None, strict=True):
     if not device:
         device = torch.device("cpu")
     if os.path.isfile(cp_path):
-        print("=> loading checkpoint '{}'".format(cp_path))
-        checkpoint = torch.load(cp_path, map_location=device)
+        # print("=> loading checkpoint '{}'".format(cp_path))
+        checkpoint = torch.load(cp_path, map_location='cpu')
 
         # check if there is module
         if list(checkpoint["state_dict"].keys())[0][:7] == "module.":
@@ -28,14 +28,14 @@ def load_model(cp_path, net, device=None, strict=True):
             state_dict = checkpoint["state_dict"]
         net.load_state_dict(state_dict, strict=strict)
 
-        print("=> loaded checkpoint '{}' (epoch {})".format(cp_path, checkpoint["epoch"]))
+        # print("=> loaded checkpoint '{}' (epoch {})".format(cp_path, checkpoint["epoch"]))
         start_epoch = checkpoint["epoch"]
     else:
         print("=> no checkpoint found at '{}'".format(cp_path))
         start_epoch = 0
         sys.exit()
 
-    return net, start_epoch
+    return net.to(device), start_epoch
 
 
 # ---------------------------------------------------- #

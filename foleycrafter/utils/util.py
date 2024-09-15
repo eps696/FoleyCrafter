@@ -1697,7 +1697,8 @@ def read_frames_with_moviepy(video_path, max_frame_nums=None):
         frames.append(frame)
     if max_frame_nums is not None:
         frames_idx = np.linspace(0, len(frames) - 1, max_frame_nums, dtype=int)
-    return np.array(frames)[frames_idx, ...], duration
+        return np.array(frames)[frames_idx, ...], duration, clip.fps
+    return np.array(frames), duration, clip.fps
 
 
 def read_frames_with_moviepy_resample(video_path, save_path):

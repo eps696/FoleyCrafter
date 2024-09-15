@@ -14,6 +14,11 @@
 
 </div>
 
+# This fork
+Optimized for longer videos processing, splitting them for (if necessary) with `-cut X` argument, where X - maximum length in seconds. Use `python gen.py ...` command for that. Processed chunks are joined with hard cuts, no smooth transitions for now.
+
+Below is original README.
+
 # FoleyCrafter
 
 Sound effects are the unsung heroes of cinema and gaming, enhancing realism, impact, and emotional depth for an immersive audiovisual experience. **FoleyCrafter** is a video-to-audio generation framework which can produce realistic sound effects semantically relevant and synchronized with videos.
