@@ -15,7 +15,7 @@
 </div>
 
 # This fork
-Optimized for longer videos processing, splitting them for (if necessary) with `-cut X` argument, where X - maximum length in seconds. Use `python gen.py ...` command for that. Processed chunks are joined with hard cuts, no smooth transitions for now.
+Optimized for longer videos processing, splitting them (if necessary) with `-cut X` argument, where X - maximum length in seconds. Use `python gen.py ...` command for that. Processed chunks are joined with hard cuts, no smooth transitions for now. Other changes: added sound normalization from [AudioCrafter](https://github.com/facebookresearch/audiocraft), fixed time detector on GPU.  
 
 Below is original README.
 
